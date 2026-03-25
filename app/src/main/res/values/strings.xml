@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">StudyBuddy</string>
+
+    <string name="splash_title">Study Buddy</string>
+    <string name="get_started">Get Started</string>
+
+    <string name="login_title">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_button">Login</string>
+
+    <string name="dashboard_title">Dashboard</string>
+    <string name="subjects_button">Subjects</string>
+    <string name="profile_button">Profile</string>
+
+    <string name="subjects_title">Subjects List</string>
+    <string name="profile_title">Profile</string>
+</resources>
