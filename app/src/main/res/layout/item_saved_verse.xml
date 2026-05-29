@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_saved_card"
+        android:padding="16dp">
+
+        <!-- Title / Scripture reference -->
+        <TextView
+            android:id="@+id/saved_item_reference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JOHN 3:16"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#1E1E1E"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="false"
+            android:layout_marginTop="2dp"
+            android:letterSpacing="0.05" />
+
+        <!-- Options vertical dots -->
+        <ImageButton
+            android:id="@+id/btn_saved_item_options"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_more_vert"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="Options"
+            app:tint="#1E1E1E" />
+
+        <!-- Quote verse text -->
+        <TextView
+            android:id="@+id/saved_item_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saved_item_reference"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="14dp"
+            android:text="&quot;For God so loved the world that he gave his one and only Son...&quot;"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="#424242"
+            android:lineSpacingMultiplier="1.2" />
+
+        <!-- Footer tag pill (FAVORITE, HIGHLIGHTED, NOTE) -->
+        <TextView
+            android:id="@+id/saved_item_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saved_item_text"
+            android:layout_alignParentStart="true"
+            android:text="FAVORITE"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_saved_tag_favorite"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:letterSpacing="0.05" />
+
+        <!-- Date saved -->
+        <TextView
+            android:id="@+id/saved_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saved_item_text"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@id/saved_item_tag"
+            android:text="May 10, 2025"
+            android:textSize="11sp"
+            android:textColor="#9E9E9E" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

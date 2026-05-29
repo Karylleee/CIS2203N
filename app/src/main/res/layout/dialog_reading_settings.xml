@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:padding="24dp">
+
+    <!-- Title and Close button -->
+    <TextView
+        android:id="@+id/settings_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Settings"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1E1E1E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_close_settings"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_close"
+        android:background="@drawable/bg_reference_chip"
+        android:contentDescription="Close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#1E1E1E" />
+
+    <View
+        android:id="@+id/settings_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/settings_title" />
+
+    <!-- 1. Theme Row -->
+    <TextView
+        android:id="@+id/lbl_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Theme"
+        android:textSize="15sp"
+        android:textColor="#1E1E1E"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_divider" />
+
+    <LinearLayout
+        android:id="@+id/theme_options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/lbl_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbl_theme"
+        app:layout_constraintTop_toTopOf="@id/lbl_theme">
+
+        <TextView
+            android:id="@+id/choice_theme_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Light"
+            android:textSize="14sp"
+            android:textColor="#1E1E1E"
+            android:background="@drawable/bg_chapter_active"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/choice_theme_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dark"
+            android:textSize="14sp"
+            android:textColor="#616161"
+            android:background="@drawable/bg_chapter_normal"
+            android:layout_marginStart="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/choice_theme_sepia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sepia"
+            android:textSize="14sp"
+            android:textColor="#616161"
+            android:background="@drawable/bg_chapter_normal"
+            android:layout_marginStart="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- 2. Font Style Row -->
+    <TextView
+        android:id="@+id/lbl_font_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Font style"
+        android:textSize="15sp"
+        android:textColor="#1E1E1E"
+        android:textStyle="bold"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_theme" />
+
+    <LinearLayout
+        android:id="@+id/font_style_options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/lbl_font_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/theme_options"
+        app:layout_constraintTop_toTopOf="@id/lbl_font_style">
+
+        <TextView
+            android:id="@+id/choice_font_serif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serif"
+            android:textSize="14sp"
+            android:textColor="#1E1E1E"
+            android:background="@drawable/bg_chapter_active"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/choice_font_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sans"
+            android:textSize="14sp"
+            android:textColor="#616161"
+            android:background="@drawable/bg_chapter_normal"
+            android:layout_marginStart="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- 3. Font Size Row -->
+    <TextView
+        android:id="@+id/lbl_font_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Font size"
+        android:textSize="15sp"
+        android:textColor="#1E1E1E"
+        android:textStyle="bold"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_font_style" />
+
+    <LinearLayout
+        android:id="@+id/font_size_slider_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/lbl_font_size">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/dialog_font_size_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="10"
+            android:progress="3"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textSize="20sp"
+            android:textColor="#1E1E1E"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 4. Line Spacing Row -->
+    <TextView
+        android:id="@+id/lbl_line_spacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Line\nspacing"
+        android:textSize="15sp"
+        android:textColor="#1E1E1E"
+        android:textStyle="bold"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/font_size_slider_layout" />
+
+    <LinearLayout
+        android:id="@+id/line_spacing_options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/lbl_line_spacing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/theme_options"
+        app:layout_constraintTop_toTopOf="@id/lbl_line_spacing">
+
+        <TextView
+            android:id="@+id/choice_spacing_compact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compact"
+            android:textSize="14sp"
+            android:textColor="#616161"
+            android:background="@drawable/bg_chapter_normal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/choice_spacing_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            android:textSize="14sp"
+            android:textColor="#1E1E1E"
+            android:background="@drawable/bg_chapter_active"
+            android:layout_marginStart="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/choice_spacing_wide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wide"
+            android:textSize="14sp"
+            android:textColor="#616161"
+            android:background="@drawable/bg_chapter_normal"
+            android:layout_marginStart="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- 5. Reading Assist Row -->
+    <TextView
+        android:id="@+id/lbl_reading_assist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reading\nassist"
+        android:textSize="15sp"
+        android:textColor="#1E1E1E"
+        android:textStyle="bold"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_line_spacing" />
+
+    <LinearLayout
+        android:id="@+id/reading_assist_options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/lbl_reading_assist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/theme_options"
+        app:layout_constraintTop_toTopOf="@id/lbl_reading_assist">
+
+        <TextView
+            android:id="@+id/choice_assist_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Off"
+            android:textSize="14sp"
+            android:textColor="#616161"
+            android:background="@drawable/bg_chapter_normal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/choice_assist_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On"
+            android:textSize="14sp"
+            android:textColor="#1E1E1E"
+            android:background="@drawable/bg_chapter_active"
+            android:layout_marginStart="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Back to Reader Button -->
+    <TextView
+        android:id="@+id/btn_back_to_reader"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:text="Back to reader"
+        android:textSize="16sp"
+        android:textColor="#616161"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/bg_reference_chip"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@id/lbl_reading_assist" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
